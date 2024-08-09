@@ -30,11 +30,9 @@ const Sidebar: React.FC<SidebarProps> = ({ toggleTheme }) => {
   ) => {
     setActiveIndex(index);
     const element = event.currentTarget;
-    toggleNav()
+    toggleNav();
     setCirclePosition(element.offsetTop);
   };
-
- 
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -44,7 +42,7 @@ const Sidebar: React.FC<SidebarProps> = ({ toggleTheme }) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = Array.from(sections).indexOf(entry.target);
+            const index = Array.from(sections).indexOf(entry.target as HTMLElement);
             setActiveIndex(index);
             const activeElement = navItems[index] as HTMLLIElement;
             setCirclePosition(activeElement.offsetTop);

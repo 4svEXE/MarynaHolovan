@@ -10,7 +10,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build" 
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@emotion/react": "^11.13.0",
@@ -35,6 +35,7 @@
     "yup": "^1.4.0"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.9.12",
     "@types/node": "^22.1.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",

@@ -5,12 +5,11 @@ import "./index.scss";
 
 export default function Gallery() {
   const { t } = useTranslation();
-  const galleryRef = useRef(null);
-  const [inView, setInView] = useState([]);
+  const galleryRef = useRef<HTMLDivElement | null>(null);
+  const [inView, setInView] = useState<string[]>([]);
   const [isLoader, setIsLoader] = useState(true);
 
-  // Обробник прокрутки
-  const handleScroll = (event) => {
+  const handleScroll = (event: WheelEvent) => {
     if (galleryRef.current) {
       galleryRef.current.scrollLeft += event.deltaY;
       event.preventDefault();
@@ -27,17 +26,18 @@ export default function Gallery() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setInView((prev) => [...prev, entry.target.dataset.index]);
+            const target = entry.target as HTMLElement;
+            setInView((prev) => [...prev, target.dataset.index!]);
           }
         });
       },
       { threshold: 0.1 }
     );
 
-    const elements = galleryRef.current.querySelectorAll(".photo");
-    elements.forEach((element) => observer.observe(element));
+    const elements = galleryRef.current?.querySelectorAll(".photo");
+    elements?.forEach((element) => observer.observe(element));
 
-    return () => elements.forEach((element) => observer.unobserve(element));
+    return () => elements?.forEach((element) => observer.unobserve(element));
   }, []);
 
   // Remove loader
@@ -52,7 +52,8 @@ export default function Gallery() {
 
   const imagesSrc = new Array(80)
     .fill(0)
-    .map((_, index) => `src/assets/gallery/${1}.png`);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    .map((_, index) => `src/assets/gallery/${index}.png`);
 
   return (
     <section className="Gallery">

@@ -1,7 +1,11 @@
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-export default function WithRouter({ children }) {
+interface WithRouterProps {
+  children: React.ReactNode;
+}
+
+export default function WithRouter({ children }: WithRouterProps) {
   return (
     <BrowserRouter basename="/">
         {children}

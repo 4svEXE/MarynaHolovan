@@ -1,26 +1,35 @@
 import { useTranslation } from "react-i18next";
-import { Formik, Field, ErrorMessage } from "formik";
+import { Formik, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import emailjs from "emailjs-com";
 
-const ContactForm = () => {
+interface FormValues {
+  name: string;
+  email: string;
+  photoshootType: string;
+  message: string;
+}
+
+const ContactForm: React.FC = () => {
   const { t } = useTranslation();
 
-  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID;
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+  const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID as string;
 
   const validationSchema = Yup.object({
     name: Yup.string().required(t("errors.required")),
-    email: Yup
-      .string()
+    email: Yup.string()
       .email(t("errors.invalidEmail"))
       .required(t("errors.required")),
     photoshootType: Yup.string().required(t("errors.required")),
     message: Yup.string(),
   });
 
-  const onSubmit = async (values, actions) => {
+  const onSubmit = async (
+    values: FormValues,
+    actions: FormikHelpers<FormValues>
+  ) => {
     try {
       await emailjs.send(
         SERVICE_ID,
