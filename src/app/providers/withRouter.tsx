@@ -8,7 +8,7 @@ interface WithRouterProps {
 export default function WithRouter({ children }: WithRouterProps) {
   return (
     // <BrowserRouter basename="/">
-    <BrowserRouter basename="https://4svEXE.github.io/MarynaHolovan/">
+    <BrowserRouter basename="/MarynaHolovan/">
         {children}
     </BrowserRouter>
   );
