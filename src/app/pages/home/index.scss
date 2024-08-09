@@ -1,0 +1,9 @@
+@import '../../scss/variables.scss';
+
+.wrapper{
+    margin-left: 320px;
+
+    @media (max-width: $media-laptop) {
+        margin-left: 0px;
+    }
+}
