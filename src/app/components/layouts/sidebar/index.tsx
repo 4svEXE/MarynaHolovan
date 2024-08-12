@@ -2,18 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import SocialLinks from "../../widgets/social";
+import ThemeSwitcher from "../../widgets/theme-switcher";
 import LanguageSwitcher from "../../widgets/lang-switcher";
 import "./index.scss";
 
 interface SidebarProps {
-  // toggleTheme: () => void;
+  toggleTheme: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = () => {
+const Sidebar: React.FC<SidebarProps> = ({ toggleTheme }) => {
   const { t } = useTranslation();
 
   const [activeNav, setActiveNav] = useState<boolean>(false);
 
+  const theme = JSON.parse(window.localStorage.getItem("darkTheme") ?? "false");
   const language = window.localStorage.getItem("i18nextLng") ?? "en";
 
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -166,7 +168,9 @@ const Sidebar: React.FC<SidebarProps> = () => {
           availableLanguages={availableLanguages}
         />
 
-  
+        <div className="flex w-full justify-center hidden">
+          <ThemeSwitcher toggleTheme={toggleTheme} currentTheme={theme} />
+        </div>
       </div>
 
       <SocialLinks />
