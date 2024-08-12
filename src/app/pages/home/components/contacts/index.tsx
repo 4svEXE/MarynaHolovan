@@ -10,7 +10,7 @@ const Contacts = () => {
         <div className="map-container">
           <MapContainer
             center={[50.7681, 15.1062]}
-            zoom={16}
+            zoom={10}
             scrollWheelZoom={true}
           >
             <TileLayer url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}.png" />

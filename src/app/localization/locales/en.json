@@ -1,10 +1,11 @@
 {
+  "title": "Maryna Holovan - photographer in Liberec",
   "sidebar": {
     "logo": "Maryna Holovan",
     "slogan": "Creating memories for life",
     "gallery": "Gallery",
-    "prices": {
-      "title": "Prices",
+    "prices": "Prices",
+    "pricesCards" : {
       "express": "EXPRESS - 500 KC",
       "standard": "STANDARD - 1500 KC",
       "premium": "PREMIUM - 2500 KC"

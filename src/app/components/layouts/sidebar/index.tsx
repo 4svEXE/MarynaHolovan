@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import "./index.scss";
+import { Helmet } from "react-helmet";
 import SocialLinks from "../../widgets/social";
 import ThemeSwitcher from "../../widgets/theme-switcher";
 import LanguageSwitcher from "../../widgets/lang-switcher";
+import "./index.scss";
 
 interface SidebarProps {
   toggleTheme: () => void;
@@ -19,6 +20,7 @@ const Sidebar: React.FC<SidebarProps> = ({ toggleTheme }) => {
 
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [circlePosition, setCirclePosition] = useState<number>(0);
+  const [currentPage, setCurrentPage] = useState<string>("gallery");
 
   const toggleNav = () => {
     setActiveNav((prev) => !prev);
@@ -28,8 +30,23 @@ const Sidebar: React.FC<SidebarProps> = ({ toggleTheme }) => {
     index: number,
     event: React.MouseEvent<HTMLLIElement, MouseEvent>
   ) => {
+    event.preventDefault();
+
     setActiveIndex(index);
     const element = event.currentTarget;
+
+    const elementA = event.currentTarget.querySelector("a");
+    const href = elementA?.getAttribute("href") || "#home";
+    const targetElement = document.querySelector(href);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+
+    setCurrentPage(t("sidebar." + href.slice(1)));
+
     toggleNav();
     setCirclePosition(element.offsetTop);
   };
@@ -42,7 +59,9 @@ const Sidebar: React.FC<SidebarProps> = ({ toggleTheme }) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = Array.from(sections).indexOf(entry.target as HTMLElement);
+            const index = Array.from(sections).indexOf(
+              entry.target as HTMLElement
+            );
             setActiveIndex(index);
             const activeElement = navItems[index] as HTMLLIElement;
             setCirclePosition(activeElement.offsetTop);
@@ -68,7 +87,13 @@ const Sidebar: React.FC<SidebarProps> = ({ toggleTheme }) => {
 
   return (
     <aside className={`Sidebar ${activeNav ? "active" : ""}`}>
-      <div id="menuToggle">
+      <Helmet>
+        <title>
+          {currentPage} | {t("title")}
+        </title>
+      </Helmet>
+
+      <div id="menuToggle" className="block md:hidden">
         <input
           id="checkbox"
           type="checkbox"
@@ -101,12 +126,14 @@ const Sidebar: React.FC<SidebarProps> = ({ toggleTheme }) => {
             className={`nav-item ${activeIndex === 1 ? "active" : ""}`}
             onClick={(e) => handleItemClick(1, e)}
           >
-            <a href="#prices">{t("sidebar.prices.title")}</a>
-            <ul>
-              <li>{t("sidebar.prices.express")}</li>
-              <li>{t("sidebar.prices.standard")}</li>
-              <li>{t("sidebar.prices.premium")}</li>
-            </ul>
+            <a href="#prices">
+              {t("sidebar.prices")}
+              <ul>
+                <li>{t("sidebar.pricesCards.express")}</li>
+                <li>{t("sidebar.pricesCards.standard")}</li>
+                <li>{t("sidebar.pricesCards.premium")}</li>
+              </ul>
+            </a>
           </li>
           <li
             className={`nav-item ${activeIndex === 2 ? "active" : ""}`}
@@ -140,10 +167,6 @@ const Sidebar: React.FC<SidebarProps> = ({ toggleTheme }) => {
           currentLanguage={language}
           availableLanguages={availableLanguages}
         />
-
-        <div className="flex w-full justify-center">
-          <ThemeSwitcher toggleTheme={toggleTheme} currentTheme={theme} />
-        </div>
       </div>
 
       <SocialLinks />

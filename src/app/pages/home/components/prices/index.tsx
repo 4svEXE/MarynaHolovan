@@ -6,14 +6,14 @@ const Prices: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="Prices flex-col">
+    <section className="Prices ">
       <h2>{t("prices.title")}</h2>
 
-      <div className="grid-wrapper grid-cols-3">
+      <div className="grid-wrapper grid-cols-1 md:grid-cols-3">
         <div className="price-card">
           <div className="card-body">
             <h4>{t("prices.express.title")}</h4>
-            <img src="src/assets/prices/01.png" alt={t("prices.express.alt")} />
+            <img src="src/assets/prices/1.jpeg" alt={t("prices.express.alt")} />
             <div className="b-wrapper">
               <b>{t("prices.express.price")}</b>
             </div>
@@ -35,7 +35,7 @@ const Prices: React.FC = () => {
           <div className="card-body">
             <h4>{t("prices.standard.title")}</h4>
             <img
-              src="src/assets/prices/01.png"
+              src="src/assets/prices/2.jpeg"
               alt={t("prices.standard.alt")}
             />
             <div className="b-wrapper">
@@ -59,7 +59,7 @@ const Prices: React.FC = () => {
         <div className="price-card">
           <div className="card-body">
             <h4>{t("prices.premium.title")}</h4>
-            <img src="src/assets/prices/01.png" alt={t("prices.premium.alt")} />
+            <img src="src/assets/prices/3.jpeg" alt={t("prices.premium.alt")} />
             <div className="b-wrapper">
               <b>{t("prices.premium.price")}</b>
             </div>

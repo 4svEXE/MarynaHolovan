@@ -1,10 +1,11 @@
 {
+  "title": "Марина Голован - Фотограф у Ліберці",
   "sidebar": {
     "logo": "Марина Голован",
     "slogan": "Створюємо спогади на все життя",
     "gallery": "Галерея",
-    "prices": {
-      "title": "Ціни",
+    "prices": "Ціни",
+    "pricesCards" : {
       "express": "EXPRESS - 500 KC",
       "standard": "STANDARD - 1500 KC",
       "premium": "PREMIUM - 2500 KC"

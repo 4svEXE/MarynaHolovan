@@ -18,7 +18,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   };
 
   return (
-    <div className="lg:flex lg:justify-end dark:text-white">
+    <div className="lg:flex lg:justify-end text-white">
       <div className="language-switcher">
         {availableLanguages.map(({ code, name }) => (
           <button

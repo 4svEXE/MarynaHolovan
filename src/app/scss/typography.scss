@@ -23,6 +23,10 @@ h2 {
     text-align: center;
     width: 100%;
     top: 20px;
+
+    @media (max-width: $media-netbook) {
+        font-size: 30px;
+    }
 }
 
 h6 {

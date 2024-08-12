@@ -19,12 +19,20 @@
         white-space: nowrap;
         width: max-content;
 
+        @media (max-width: $media-desktop) {
+            padding-left: Calc(320px + 8px);
+            grid-gap: 8px;
+
+            grid-template-rows: repeat(4, 200px);
+            grid-auto-columns: 200px;
+        }
+
         @media (max-width: $media-laptop) {
             padding-left: 4px;
             grid-gap: 4px;
 
             grid-template-rows: repeat(4, 160px);
-        grid-auto-columns: 160px;
+            grid-auto-columns: 160px;
         }
     }
 }

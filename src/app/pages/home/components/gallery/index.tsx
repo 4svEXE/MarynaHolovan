@@ -52,8 +52,7 @@ export default function Gallery() {
 
   const imagesSrc = new Array(80)
     .fill(0)
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    .map((_, index) => `src/assets/gallery/${index}.png`);
+    .map((_, index) => `src/assets/gallery/${index+1}.jpeg`);
 
   return (
     <section className="Gallery">
