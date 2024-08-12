@@ -43,7 +43,7 @@ export default function Gallery() {
   // Remove loader
   useEffect(() => {
     const timer = setTimeout(() => {
-      // setIsLoader(false);
+      setIsLoader(false);
     }, 6000);
 
     // Clean up the timer if the component unmounts
@@ -52,11 +52,11 @@ export default function Gallery() {
 
   const imagesSrc = new Array(80)
     .fill(0)
-    .map((_, index) => `img/gallery/${index+1}.jpeg11`);
+    .map((_, index) => `img/gallery/${index+1}.jpeg`);
 
   return (
     <section className="Gallery">
-      {/* <h2 className="md:hidden">{t("gallery.title")}</h2> */}
+      <h2 className="hidden">{t("gallery.title")}</h2>
       <h2 className="md:hidden">{t("sidebar.logo")}</h2>
       <h4 className="md:hidden">{t("sidebar.slogan")}</h4>
       <div className="loader-wrapper">
