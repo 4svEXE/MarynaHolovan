@@ -17,6 +17,11 @@
     flex: 1;
     height: 100vh;
     width: 100%;
+
+    background-color: rgb(202 235 217);
+    background-image: url("img/map.png");
+    overflow-x: hidden;
+    position: relative;
 }
 
 .leaflet-container {

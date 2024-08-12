@@ -167,6 +167,10 @@ const Sidebar: React.FC<SidebarProps> = ({ toggleTheme }) => {
           currentLanguage={language}
           availableLanguages={availableLanguages}
         />
+
+        <div className="flex w-full justify-center">
+          <ThemeSwitcher toggleTheme={toggleTheme} currentTheme={theme} />
+        </div>
       </div>
 
       <SocialLinks />

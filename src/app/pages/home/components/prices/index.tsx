@@ -13,7 +13,7 @@ const Prices: React.FC = () => {
         <div className="price-card">
           <div className="card-body">
             <h4>{t("prices.express.title")}</h4>
-            <img src="src/assets/prices/1.jpeg" alt={t("prices.express.alt")} />
+            <img src="img/prices/1.jpeg" alt={t("prices.express.alt")} />
             <div className="b-wrapper">
               <b>{t("prices.express.price")}</b>
             </div>
@@ -35,7 +35,7 @@ const Prices: React.FC = () => {
           <div className="card-body">
             <h4>{t("prices.standard.title")}</h4>
             <img
-              src="src/assets/prices/2.jpeg"
+              src="img/prices/2.jpeg"
               alt={t("prices.standard.alt")}
             />
             <div className="b-wrapper">
@@ -59,7 +59,7 @@ const Prices: React.FC = () => {
         <div className="price-card">
           <div className="card-body">
             <h4>{t("prices.premium.title")}</h4>
-            <img src="src/assets/prices/3.jpeg" alt={t("prices.premium.alt")} />
+            <img src="img/prices/3.jpeg" alt={t("prices.premium.alt")} />
             <div className="b-wrapper">
               <b>{t("prices.premium.price")}</b>
             </div>

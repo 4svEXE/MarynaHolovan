@@ -52,7 +52,7 @@ export default function Gallery() {
 
   const imagesSrc = new Array(80)
     .fill(0)
-    .map((_, index) => `src/assets/gallery/${index+1}.jpeg`);
+    .map((_, index) => `img/gallery/${index+1}.jpeg`);
 
   return (
     <section className="Gallery">
