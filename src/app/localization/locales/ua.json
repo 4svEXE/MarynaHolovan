@@ -114,6 +114,7 @@
   "contactForm": {
     "nameLabel": "Ім'я:",
     "emailLabel": "Електронна пошта:",
+    "phoneLabel": "Номер телефону:",
     "photoshootTypeLabel": "Тип фотосесії:",
     "messageLabel": "Додаткова інформація (за потреби):",
     "submitButton": "Надіслати",

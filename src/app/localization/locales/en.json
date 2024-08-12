@@ -115,6 +115,7 @@
   "contactForm": {
     "nameLabel": "Name:",
     "emailLabel": "Email:",
+    "phoneLabel": "Phone:",
     "photoshootTypeLabel": "Photoshoot Type:",
     "messageLabel": "Additional Information (if needed):",
     "submitButton": "Submit",

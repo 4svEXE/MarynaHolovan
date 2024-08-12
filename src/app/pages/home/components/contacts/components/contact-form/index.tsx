@@ -6,6 +6,7 @@ import emailjs from "emailjs-com";
 interface FormValues {
   name: string;
   email: string;
+  phone: string;
   photoshootType: string;
   message: string;
 }
@@ -13,15 +14,16 @@ interface FormValues {
 const ContactForm: React.FC = () => {
   const { t } = useTranslation();
 
-  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
-  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
-  const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID as string;
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string || 'service_al6dooo';
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string || 'template_w4dcxww';
+  const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID as string || '_i9RtJHIWkF2VHusS';
 
   const validationSchema = Yup.object({
     name: Yup.string().required(t("errors.required")),
     email: Yup.string()
       .email(t("errors.invalidEmail"))
       .required(t("errors.required")),
+    phone: Yup.string(),
     photoshootType: Yup.string().required(t("errors.required")),
     message: Yup.string(),
   });
@@ -31,14 +33,17 @@ const ContactForm: React.FC = () => {
     actions: FormikHelpers<FormValues>
   ) => {
     try {
+      console.log('values.photoshootType :>> ', values, values.photoshootType);
       await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
         {
           from_name: values.name,
-          to_name: "Recipient Name",
+          to_name: "Maryna Holovan",
           message: values.message,
-          reply_to: values.email,
+          phone: values.phone,
+          photoshootType: values.photoshootType,
+          email: values.email,
         },
         USER_ID
       );
@@ -57,6 +62,7 @@ const ContactForm: React.FC = () => {
       initialValues={{
         name: "",
         email: "",
+        phone: "",
         photoshootType: "",
         message: "",
       }}
@@ -80,6 +86,15 @@ const ContactForm: React.FC = () => {
             <Field type="email" id="email" name="email" />
             <ErrorMessage
               name="email"
+              component="div"
+              className="error-message"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="phone">{t("contactForm.phoneLabel")}</label>
+            <Field type="text" id="phone" name="phone" />
+            <ErrorMessage
+              name="phone"
               component="div"
               className="error-message"
             />
