@@ -94,12 +94,13 @@
 #menuToggle {
     position: absolute;
     z-index: 10;
-    bottom: 30px;
+    top: 30px;
     right: 0;
     transform: translateX(100%);
     background-color: #134B70f2;
-    padding: 12px;
+    padding: 8px;
     border-radius: 0 8px 8px 0;
+    opacity: .6 ;
 
     #checkbox {
         display: none;

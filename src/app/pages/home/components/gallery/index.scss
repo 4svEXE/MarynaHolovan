@@ -42,8 +42,8 @@
     h4 {
         position: absolute;
         color: #fff;
-        -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-        animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        -webkit-animation: slide-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: slide-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
         animation-delay: 1s;
     }
 
@@ -51,7 +51,7 @@
         width: 100%;
         text-align: center;
         top: 70px;
-        animation-delay: 1.2s;
+        animation-delay: 1.4s;
     }
 
     .loader-wrapper {
@@ -61,6 +61,7 @@
 
         @media (max-width: $media-laptop) {
             left: 0;
+            opacity: .5;
         }
     }
 
