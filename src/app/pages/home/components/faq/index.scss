@@ -1,7 +1,7 @@
 @import '../../../../scss/variables.scss';
 
 .Faq {
-    background-color: #867373;
+    background-color: #342d29;
     color: #333;
 
     &::before {
@@ -27,7 +27,6 @@
         flex-direction: column;
         align-items: center;
         padding: 100px;
-
 
         @media (max-width: $media-netbook) {
             padding: 10vh 24px;
@@ -56,7 +55,7 @@
         color: #fff;
 
         .faq-question {
-            background-color: #9085BF;
+            background-color: #12476a;
             padding: 8px;
             width: 100%;
             text-align: left;
@@ -70,7 +69,7 @@
             transition: background-color 0.3s ease;
 
             &:hover {
-                background-color: #9085BFcc;
+                background-color: #12476add;
             }
 
             .plus-minus {
@@ -84,7 +83,7 @@
         }
 
         .faq-answer {
-            background-color: #8BADDA;
+            background-color: #9085BF;
             overflow: hidden;
             transition: max-height 0.3s ease;
 

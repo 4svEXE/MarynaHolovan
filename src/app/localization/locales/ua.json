@@ -5,7 +5,7 @@
     "slogan": "Створюємо спогади на все життя",
     "gallery": "Галерея",
     "prices": "Ціни",
-    "pricesCards" : {
+    "pricesCards": {
       "express": "EXPRESS - 500 KC",
       "standard": "STANDARD - 1500 KC",
       "premium": "PREMIUM - 2500 KC"
@@ -110,6 +110,10 @@
   "errors": {
     "required": "Це поле є обов'язковим",
     "invalidEmail": "Недійсна електронна адреса"
+  },
+  "contacts": {
+    "title": "Замовити фотосесію",
+    "description": "Фотосесія в Ліберці та околицях, для вас та ваших близьких"
   },
   "contactForm": {
     "nameLabel": "Ім'я:",

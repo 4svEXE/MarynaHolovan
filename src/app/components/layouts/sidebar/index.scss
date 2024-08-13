@@ -40,6 +40,14 @@
     }
 
     nav {
+        .nav-item {
+            a {
+                display: flex;
+                flex-direction: column;
+
+            }
+        }
+
         ul.navigation {
             position: relative;
             border-left: 1px solid #ffffff80;
@@ -51,11 +59,15 @@
 
             li {
                 a {
-                    font-size: 22px;
+                    font-size: 20px;
                     color: #fff;
                     text-transform: uppercase;
                     opacity: .6;
-                    padding: 16px 20px;
+                    padding: 0px 12px;
+
+                    ul li {
+                        font-size: 16px;
+                    }
                 }
 
                 &.sircle {
@@ -100,7 +112,7 @@
     background-color: #134B70f2;
     padding: 8px;
     border-radius: 0 8px 8px 0;
-    opacity: .6 ;
+    opacity: .6;
 
     #checkbox {
         display: none;

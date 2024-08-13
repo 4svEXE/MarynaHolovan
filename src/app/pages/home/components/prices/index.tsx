@@ -25,19 +25,17 @@ const Prices: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex justify-between gap-7 mt-4">
-            <a className="custom-button w-full">{t("prices.order")}</a>
-            <a className="custom-button w-full">{t("prices.gift")}</a>
+          <div className="hidden md:flex justify-between gap-7 mt-4 ">
+            <a href="#contacts" className="custom-button w-full">
+              {t("prices.order")}
+            </a>
           </div>
         </div>
 
         <div className="price-card">
           <div className="card-body">
             <h4>{t("prices.standard.title")}</h4>
-            <img
-              src="img/prices/2.jpeg"
-              alt={t("prices.standard.alt")}
-            />
+            <img src="img/prices/2.jpeg" alt={t("prices.standard.alt")} />
             <div className="b-wrapper">
               <b>{t("prices.standard.price")}</b>
             </div>
@@ -50,9 +48,10 @@ const Prices: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex justify-between gap-7 mt-4">
-            <a className="custom-button w-full">{t("prices.order")}</a>
-            <a className="custom-button w-full">{t("prices.gift")}</a>
+          <div className="hidden md:flex justify-between gap-7 mt-4 ">
+            <a href="#contacts" className="custom-button w-full">
+              {t("prices.order")}
+            </a>
           </div>
         </div>
 
@@ -72,11 +71,21 @@ const Prices: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex justify-between gap-7 mt-4">
-            <a className="custom-button w-full">{t("prices.order")}</a>
-            <a className="custom-button w-full">{t("prices.gift")}</a>
+          <div className="hidden md:flex justify-between gap-7 mt-4 ">
+            <a href="#contacts" className="custom-button w-full">
+              {t("prices.order")}
+            </a>
           </div>
         </div>
+      </div>
+
+      <div className="md:hidden flex justify-between gap-7 mt-4 ">
+        <a href="#contacts" className="custom-button w-full">
+          {t("prices.order")}
+        </a>
+        <a href="#contacts" className="custom-button w-full">
+          {t("prices.gift")}
+        </a>
       </div>
     </section>
   );

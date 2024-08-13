@@ -107,10 +107,13 @@
       "Unfortunately, additional costs for the shoot are covered separately."
     ]
   },
-
   "errors": {
     "required": "This field is required",
     "invalidEmail": "Invalid email address"
+  },
+  "contacts": {
+    "title": "Order a photo session",
+    "description": "Photo session in Liberec and its surroundings, for you and your loved ones"
   },
   "contactForm": {
     "nameLabel": "Name:",

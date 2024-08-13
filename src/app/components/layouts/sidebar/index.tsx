@@ -93,7 +93,7 @@ const Sidebar: React.FC<SidebarProps> = ({ toggleTheme }) => {
         </title>
       </Helmet>
 
-      <div id="menuToggle" className="block md:hidden">
+      <div id="menuToggle" className="block lg:hidden">
         <input
           id="checkbox"
           type="checkbox"
@@ -151,12 +151,15 @@ const Sidebar: React.FC<SidebarProps> = ({ toggleTheme }) => {
             className={`nav-item ${activeIndex === 4 ? "active" : ""}`}
             onClick={(e) => handleItemClick(4, e)}
           >
-            <a href="#contacts">{t("sidebar.contacts")}</a>
-            <ul>
-              <li>
-                <a href="tel:+38099999999">+38099999999</a>
-              </li>
-            </ul>
+            <a href="#contacts">
+              {t("sidebar.contacts")}
+
+              <ul>
+                <li>
+                  <a href="tel:+38099999999">+38099999999</a>
+                </li>
+              </ul>
+            </a>
           </li>
           <li className="sircle" style={{ top: circlePosition }}></li>
         </ul>
